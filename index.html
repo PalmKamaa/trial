@@ -153,7 +153,7 @@
 
 <script>
     // Initialize EmailJS
-    emailjs.init("public_x-NvMOA5LFsR2flDY"); // <-- replace later
+    emailjs.init("public_x-NvMOA5LFsR2flDY"); 
 
     const noBtn = document.getElementById("noBtn");
 
@@ -195,7 +195,13 @@
         emailjs.send("service_zimymhh", "template_mia8qgx", {
             to_email: "palmkamauk@gmail.com",
             message: "She said YES to being your Valentine 💖🥰"
-        });
+        })
+             .then((response) => {
+    console.log('Email sent successfully:', response.status, response.text);
+  })
+  .catch((error) => {
+    console.error('Email sending failed:', error);
+  });
     }
 </script>
 
